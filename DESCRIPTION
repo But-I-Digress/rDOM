@@ -1,6 +1,6 @@
 Package: rDOM
 Title: r Document Object Model
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: person("Charles", "Scheid", email = "charleshscheid@gmail.com", role = c("aut", "cre"))
 Description: rDOM provides access to the W3c Document Object Model.
 Depends: R (>= 3.2.2), rJava
