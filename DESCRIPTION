@@ -5,6 +5,8 @@ Authors@R: person("Charles", "Scheid", email = "charleshscheid@gmail.com", role 
 Description: rDOM provides access to the W3c Document Object Model.
 Depends: R (>= 3.2.2), rJava
 Suggests: rFOP
+URL: https://github.com/But-I-Digress/rDOM
+BurReports: https://github.com/But-I-Digress/rDOM/issues
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
