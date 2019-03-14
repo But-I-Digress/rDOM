@@ -14,6 +14,10 @@ devtools::install_github("But-I-Digress/rDOM")
 devtools::install_github("But-I-Digress/rDOM", args = "--no-multiarch")
 ```
 
+## Formatting Objects
+
+If the FOPjars package is installed then this package can be used to create a Formatting Objects document tree and then save a document as PDF. 
+
 ## Example
 
 ```r
