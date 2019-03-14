@@ -1,6 +1,6 @@
 Package: rDOM
 Title: r Document Object Model
-Version: 0.0.1.1
+Version: 0.0.1.2
 Authors@R: person("Charles", "Scheid", email = "charleshscheid@gmail.com", role = c("aut", "cre"))
 Description: This package makes the Java implementation of the W3C DOM available to R. 
 Depends: R (>= 3.2.2), rJava
