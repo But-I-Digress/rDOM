@@ -5,15 +5,9 @@
 }
 
 .onLoad <- function (libname, pkgname) {
-	#rJava::.jpackage(pkgname, lib.loc=libname)
 	rJava::.jpackage(pkgname)
-	rJava::.jpackage("FOPjars")
-	
-	#FOP.config.path <- file.path(libname, pkgname, "conf", "fop.xconf") 
-	default.config.path <- file.path(libname, "FOPjars", "conf", "fop.xconf")
-	FOP.config.folder <- file.path(libname, pkgname, "conf") 
-	dir.create(FOP.config.folder, showWarnings=FALSE)
-	file.copy(default.config.path, FOP.config.folder)
-	
-	options(FOP.config.path=file.path(FOP.config.folder, "fop.xconf"))
+	if(requireNamespace("FOPjars", quietly = TRUE)) {
+		rJava::.jpackage("FOPjars")	
+		options("fop.config.path" = getOption("fop.config.path", default = system.file("conf", "fop.xconf", package = "FOPjars")))
+	}
 }

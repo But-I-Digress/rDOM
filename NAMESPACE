@@ -2,5 +2,6 @@
 
 export(FOtoPDF)
 export(createDocument)
+export(install_fop)
 export(printDocument)
 export(saveDocument)

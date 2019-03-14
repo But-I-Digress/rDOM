@@ -1,13 +1,13 @@
 Package: rDOM
 Title: r Document Object Model
-Version: 0.0.0.9001
+Version: 0.0.0.9002
 Authors@R: person("Charles", "Scheid", email = "charleshscheid@gmail.com", role = c("aut", "cre"))
-Description: rDOM provides access to the W3c Document Object Model.
+Description: rDOM provides access to the W3C Document Object Model.
 Depends: R (>= 3.2.2), rJava
-Suggests: rFOP
+Imports: digest (>= 0.6.18), rappdirs (>= 0.3.1)
 URL: https://github.com/But-I-Digress/rDOM
 BurReports: https://github.com/But-I-Digress/rDOM/issues
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
