@@ -1,6 +1,6 @@
 # rDOM
 
-**An R implementation of the W3C Document Object Model.**
+**r Document Object Model**
 
 This package makes the Java implementation of the W3C DOM available to R. 
 
@@ -21,7 +21,6 @@ If the FOPjars package is installed then this package can be used to create a Fo
 ## Example
 
 ```r
-
 library(rDOM)
 
 dom <- createDocument()

@@ -29,7 +29,7 @@
 #'}
 #'@export 
 FOtoPDF <- function (doc, path, config.path = getOption("fop.config.path")) {	
-	if (!requireNamespace("FOPjars", quietly = TRUE)) stop("Package \"FOPjars\" needs to be installed to use this function.")
+	if (!requireNamespace("FOPjars", quietly = TRUE)) stop("The package \"FOPjars\" needs to be installed to use this function.")
 	
 	rJava::.jnew("rDOM")$FOtoPDF(
 		doc, 

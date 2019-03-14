@@ -59,8 +59,6 @@ public class rDOM {
 		}
 	}
 	
-	// private final FopFactory fopFactory = FopFactory.newInstance(new File(".").toURI());
-	
 	public void FOtoPDF (Document doc, String path, String configPath) throws Exception {
 		File configFile = new File(configPath);
 		File pdf = new File(path);
@@ -75,10 +73,6 @@ public class rDOM {
 		Result res = new SAXResult(fop.getDefaultHandler());
 		transformer.transform(src, res);
 		out.close();
-	}
-	
-	public String foo () {
-		return("Foo");
 	}
 
 }
