@@ -25,7 +25,7 @@
 #' block <- flow$appendChild(dom$createElementNS(ns, "block"))
 #' text <- block$appendChild(dom$createTextNode("Hello, World!"))
 #' 
-#' FOtoPDF(dom, "Hello_World.pdf")
+#' FOtoPDF(root, "Hello_World.pdf")
 #'}
 #'@export 
 FOtoPDF <- function (doc, path, config.path = getOption("fop.config.path")) {	

@@ -16,7 +16,7 @@ createDocument <- function () rJava::.jnew("rDOM")$getDocument()
 #' @return A string representation of the document.
 #'
 #' @export
-printDocument <- function (doc) rJava::.jnew("rDOM")$toString(doc)
+printDocument <- function (doc) print(rJava::.jnew("rDOM")$toString(doc))
 
 #' saveDocument
 #' 

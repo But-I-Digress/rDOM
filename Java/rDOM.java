@@ -1,5 +1,7 @@
 
 import java.io.File;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.StringWriter;
 import java.io.Writer;
@@ -23,10 +25,11 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.Text;
 
-import org.apache.fop.apps.FOUserAgent;
-import org.apache.fop.apps.Fop;
 import org.apache.fop.apps.FopFactory;
+import org.apache.fop.apps.Fop;
 import org.apache.fop.apps.MimeConstants;
+import org.apache.avalon.framework.configuration.Configuration;
+import org.apache.avalon.framework.configuration.DefaultConfigurationBuilder;
 
 public class rDOM {
 
@@ -60,19 +63,22 @@ public class rDOM {
 	}
 	
 	public void FOtoPDF (Document doc, String path, String configPath) throws Exception {
-		File configFile = new File(configPath);
-		File pdf = new File(path);
-		FopFactory fopFactory = FopFactory.newInstance(configFile);
-		FOUserAgent foUserAgent = fopFactory.newFOUserAgent();
-		OutputStream out = new java.io.FileOutputStream(pdf);
-		out = new java.io.BufferedOutputStream(out);
-		Fop fop = fopFactory.newFop(MimeConstants.MIME_PDF, foUserAgent, out);
-		TransformerFactory factory = TransformerFactory.newInstance();
-		Transformer transformer = factory.newTransformer();
-		Source src = new DOMSource(doc);
-		Result res = new SAXResult(fop.getDefaultHandler());
-		transformer.transform(src, res);
-		out.close();
+		File config = new File(configPath);
+		FopFactory fopFactory = FopFactory.newInstance(config);
+		File file = new File(path);
+		FileOutputStream fileOutputStream = new FileOutputStream(file);
+		OutputStream out = new BufferedOutputStream(fileOutputStream);
+		
+		try {
+			Fop fop = fopFactory.newFop(MimeConstants.MIME_PDF, out);
+			TransformerFactory factory = TransformerFactory.newInstance();
+			Transformer transformer = factory.newTransformer();
+			Source src = new DOMSource(doc); 
+			Result res = new SAXResult(fop.getDefaultHandler());
+			transformer.transform(src, res);
+		} finally {
+			out.close();
+		}
 	}
 
 }
