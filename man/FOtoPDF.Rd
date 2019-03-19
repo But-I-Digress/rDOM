@@ -37,6 +37,6 @@ flow$setAttribute("flow-name", "xsl-region-body")
 block <- flow$appendChild(dom$createElementNS(ns, "block"))
 text <- block$appendChild(dom$createTextNode("Hello, World!"))
 
-FOtoPDF(dom, "Hello_World.pdf")
+FOtoPDF(root, "Hello_World.pdf")
 }
 }

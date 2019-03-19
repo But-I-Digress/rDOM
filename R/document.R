@@ -12,8 +12,6 @@ createDocument <- function () rJava::.jnew("rDOM")$getDocument()
 #' Print a DOM document.
 #'
 #' @param doc An \code{\link{rJava}} object representing the document.
-#' 
-#' @return A string representation of the document.
 #'
 #' @export
 printDocument <- function (doc) print(rJava::.jnew("rDOM")$toString(doc))

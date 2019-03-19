@@ -9,9 +9,6 @@ printDocument(doc)
 \arguments{
 \item{doc}{An \code{\link{rJava}} object representing the document.}
 }
-\value{
-A string representation of the document.
-}
 \description{
 Print a DOM document.
 }
