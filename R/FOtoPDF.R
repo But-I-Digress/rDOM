@@ -9,6 +9,7 @@
 #' 
 #' library(rDOM)
 #'
+#' dom <- createDocument()
 #' ns <- "http://www.w3.org/1999/XSL/Format"
 #' root <- dom$appendChild(dom$createElementNS(ns, "fo:root"))
 #'
